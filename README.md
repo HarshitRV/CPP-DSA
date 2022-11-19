@@ -1,4 +1,7 @@
-# CPP DSA
+# CPP DSA 
+### [![Run on Repl.it](https://repl.it/badge/github/harshitrv/CPP-DSA)](https://replit.com/@WOLVERINE0911/CPP-DSA)
+### ![Discord](https://img.shields.io/discord/764030364611117056)
+
 
 This repository contains the implementation of various data structures and algorithms in C++.
 

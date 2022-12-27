@@ -9,6 +9,12 @@ public:
     BinaryTreeNode *root;
     Queue queue;
 
+    BinaryTree()
+    {
+        root = NULL;
+        queue = Queue();
+    }
+
     void create()
     {
         BinaryTreeNode *p, *t;
@@ -60,12 +66,67 @@ public:
             preorder(p->rchild);
         }
     }
+
+    void inorder(BinaryTreeNode *p)
+    {
+        if (p)
+        {
+            inorder(p->lchild);
+            cout << p->data << " - ";
+            inorder(p->rchild);
+        }
+    }
+
+    void postorder(BinaryTreeNode *p)
+    {
+        if (p)
+        {
+            postorder(p->lchild);
+            postorder(p->rchild);
+            cout << p->data << " - ";
+        }
+    }
+
+    void levelorder(BinaryTreeNode *p)
+    {
+        BinaryTreeNode *temp;
+        Queue queueLO = Queue();
+        cout << p->data << " - ";
+        queueLO.enqueue(p);
+        while (!queueLO.isEmpty())
+        {
+            p = queueLO.dequeue();
+            if (p->lchild)
+            {
+                temp = p->lchild;
+                cout << temp->data << " - ";
+                queueLO.enqueue(temp);
+            }
+            if (p->rchild)
+            {
+                temp = p->rchild;
+                cout << temp->data << " - ";
+                queueLO.enqueue(temp);
+            }
+        }
+    }
 };
 
 int main()
 {
     BinaryTree b = BinaryTree();
     b.create();
+
+    cout << "\nPreorder traversal" << endl;
     b.preorder(b.root);
+
+    cout << "\nInorder traversal" << endl;
+    b.inorder(b.root);
+
+    cout << "\nPostorder traversal" << endl;
+    b.postorder(b.root);
+
+    cout << "\nLevelorder traversal" << endl;
+    b.levelorder(b.root);
     return 0;
 }

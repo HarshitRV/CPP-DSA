@@ -11,15 +11,16 @@ This repository contains the implementation of various data structures and algor
 - [x] Linked List
 - [x] Stack
 - [x] Queue
-- [ ] Binary Search Tree
+- [x] Binary Tree
 - [ ] AVL Tree
 - [ ] Heap
 - [ ] Graph
 
 ## Here is the table of contents for the repository
 
-| Data Structures              |
-| :--------------------------- |
-| [Linked List](./linked-list) |
-| [Stack](./stacks)            |
-| [Queue](./queue)             |
+| Data Structures                    |
+| :--------------------------------- |
+| [Linked List](./linked-list)       |
+| [Stack](./stacks)                  |
+| [Queue](./queue)                   |
+| [Binary Tree](./trees)             |

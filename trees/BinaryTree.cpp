@@ -8,11 +8,13 @@ class BinaryTree
 public:
     BinaryTreeNode *root;
     Queue queue;
+    int numNodes;
 
     BinaryTree()
     {
         root = NULL;
         queue = Queue();
+        numNodes = 0;
     }
 
     void create()
@@ -81,6 +83,7 @@ public:
     {
         if (p)
         {
+            numNodes++;
             postorder(p->lchild);
             postorder(p->rchild);
             cout << p->data << " - ";
@@ -110,6 +113,18 @@ public:
             }
         }
     }
+
+    int countNodes(BinaryTreeNode *p)
+    {
+        int x, y;
+        if (p)
+        {
+            x = countNodes(p->lchild);
+            y = countNodes(p->rchild);
+            return x + y + 1;
+        }
+        return 0;
+    }
 };
 
 int main()
@@ -128,5 +143,8 @@ int main()
 
     cout << "\nLevelorder traversal" << endl;
     b.levelorder(b.root);
+
+    cout << "\ncounting with class variable numNodes: " << b.numNodes << endl;
+    cout << "counting with recursive function: " << b.countNodes(b.root) << endl;
     return 0;
 }
